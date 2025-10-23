@@ -1,25 +1,36 @@
 #include <stdio.h>
 
-int main() {
-    int idade;
+// Aprimeira condição: Idade do usuario esta entre 18 e 65 anos.
+// A Segunda condição: A renda Mensal ser menor que 3.000,00
+// A terceira condição: Verificar se o usuario possui dependentes maior que 2. 
+
+int main() { 
+
+    int idade, dependentes; 
     float renda_mensal;
 
-    /* Programa para verificar se uma pessoa está qualificada
-       para um desconto especial com base na idade e na renda mensal.
-       A pessoa deve ter 65 anos ou mais OU uma renda mensal inferior a R$ 2000,00.
-    */
-
-    printf("Digite a sua idade: ");
+    printf("Digite sua idade: ");
     scanf("%d", &idade);
 
-    printf("Digite a sua renda mensal: ");
+    printf("Digite sua renda mensal: ");
     scanf("%f", &renda_mensal);
 
-    if (idade >= 65 || renda_mensal < 2000.00) {
-        printf("Você tem direito ao desconto!\n");
-    } else {
-        printf("Você não tem direito ao desconto.\n");
-    }
+    printf("Digite o número de dependentes: ");
+    scanf("%d", &dependentes);
 
-    return 0;
+    if (idade >=18 && idade < 65) {
+
+        if (renda_mensal < 3000.00) {
+        
+            if (dependentes > 2) {
+                printf("Você se qualifica para o desconto!\n");
+            } else {
+                printf("Você não se qualifica para o desconto: número de dependentes insuficiente.\n");
+            }
+        } else {
+            printf("Você não se qualifica para o desconto: renda mensal muito alta.\n");
+        }
+    } else {
+        printf("Você não se qualifica para o desconto: idade fora do intervalo permitido.\n");
+    }
 }

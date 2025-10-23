@@ -18,11 +18,13 @@ if(idade <= 18 || idade >= 65)
 {
     if (renda_mensal < 2000.00)
     {
-        printf(" Você tem direito ao desconto!\n");
+      printf(" Você tem direito ao desconto!\n");
     } else {
-        printf("Você não tem direito ao desconto, devido á renda!\n");
+      printf("Você não tem direito ao desconto, devido á renda!\n");
     }
     printf("Aceito com relação a idade");
 } else {
     printf("Você não está aceito com relação a idade\n");
+}
+    return 0;
 }
